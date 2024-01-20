@@ -26,6 +26,8 @@ jobs:
 
       - name: Build project
         run: npm run build
+        env:
+          VITE_BE_ENDPOINT: ${{ secrets.VITE_BE_ENDPOINT }}
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
