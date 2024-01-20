@@ -20,13 +20,17 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="container">
-        <Link onClick={() => setSelectedCat(null)} to="/" className="logo">
+        <Link
+          onClick={() => setSelectedCat(null)}
+          to="/blog-app/"
+          className="logo"
+        >
           <img src={Logo} alt="logo" />
         </Link>
         <div className="links">
           <Link
             onClick={() => setSelectedCat('art')}
-            to="/?cat=art"
+            to="/blog-app/?cat=art"
             className="link"
           >
             <h6
@@ -40,7 +44,7 @@ const Navbar = () => {
           </Link>
           <Link
             onClick={() => setSelectedCat('science')}
-            to="/?cat=science"
+            to="/blog-app/?cat=science"
             className="link"
           >
             <h6
@@ -54,7 +58,7 @@ const Navbar = () => {
           </Link>
           <Link
             onClick={() => setSelectedCat('technology')}
-            to="/?cat=technology"
+            to="/blog-app/?cat=technology"
             className="link"
           >
             <h6
@@ -68,7 +72,7 @@ const Navbar = () => {
           </Link>
           <Link
             onClick={() => setSelectedCat('cinema')}
-            to="/?cat=cinema"
+            to="/blog-app/?cat=cinema"
             className="link"
           >
             <h6
@@ -82,7 +86,7 @@ const Navbar = () => {
           </Link>
           <Link
             onClick={() => setSelectedCat('design')}
-            to="/?cat=design"
+            to="/blog-app/?cat=design"
             className="link"
           >
             <h6
@@ -96,7 +100,7 @@ const Navbar = () => {
           </Link>
           <Link
             onClick={() => setSelectedCat('food')}
-            to="/?cat=food"
+            to="/blog-app/?cat=food"
             className="link"
           >
             <h6

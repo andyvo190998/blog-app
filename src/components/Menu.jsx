@@ -5,7 +5,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const Menu = () => {
   const navigate = useNavigate();
   const maximumRelevantPostDisplay = 3;
-
   const cat = useLocation().search;
   const [posts, setPosts] = useState([]);
   const [onLoading, setOnLoading] = useState(null);
@@ -15,8 +14,9 @@ const Menu = () => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8800/api/posts${cat}`
+          `${import.meta.env.VITE_BE_ENDPOINT}/api/posts${cat}`
         );
+        console.log(data);
         setPosts(data);
         setOnLoading(false);
       } catch (error) {

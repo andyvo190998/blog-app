@@ -23,7 +23,7 @@ const Single = () => {
   const handleDeletePost = async () => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:8800/api/posts/${postId}`,
+        `${import.meta.env.VITE_BE_ENDPOINT}/api/posts/${postId}`,
         {
           withCredentials: true,
         }
@@ -52,7 +52,7 @@ const Single = () => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8800/api/posts/${postId}`
+          `${import.meta.env.VITE_BE_ENDPOINT}/api/posts/${postId}`
         );
         setPost(data);
       } catch (error) {

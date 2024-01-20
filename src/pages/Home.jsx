@@ -21,10 +21,11 @@ const Home = () => {
 
   useEffect(() => {
     setOnLoading(null);
+    console.log(`${import.meta.env.VITE_BE_ENDPOINT}/api/posts${cat}`);
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:8800/api/posts${cat}`
+          `${import.meta.env.VITE_BE_ENDPOINT}/api/posts${cat}`
         );
         setPosts(data);
         setOnLoading(false);
@@ -50,7 +51,7 @@ const Home = () => {
                   <img src={`../uploads/${post.img}`} alt="Post image error" />
                 </div>
                 <div className="content">
-                  <Link className="link" to={`/post/${post.id}`}>
+                  <Link className="link" to={`/blog-app/post/${post.id}`}>
                     <h1>{post.title}</h1>
                   </Link>
                   <div

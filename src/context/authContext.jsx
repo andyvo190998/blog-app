@@ -14,7 +14,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = async (inputs) => {
     const res = await axios.post(
-      'http://localhost:8800/api/auth/login',
+      `${import.meta.env.VITE_BE_ENDPOINT}/api/auth/login`,
       inputs,
       { withCredentials: true }
     );
@@ -24,7 +24,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const logout = async () => {
     await axios.post(
-      'http://localhost:8800/api/auth/logout',
+      `${import.meta.env.VITE_BE_ENDPOINT}/api/auth/logout`,
       { test: 'test' },
       { withCredentials: true }
     );
@@ -36,7 +36,6 @@ export const AuthContextProvider = ({ children }) => {
   }, [currentUser]);
 
   useEffect(() => {
-    console.log('here');
     const token = Cookies.get('access_token');
     if (token === undefined) {
       enqueueSnackbar('Session expired, please login again!', {

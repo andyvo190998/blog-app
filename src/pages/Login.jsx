@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/authContext';
@@ -21,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       await login(inputs);
-      navigate('/');
+      navigate('/blog-app/');
     } catch (error) {
       console.error(error);
       setErrorState(error.response.data);
@@ -30,7 +29,7 @@ const Login = () => {
 
   useEffect(() => {
     if (currentUser) {
-      navigate('/');
+      navigate('/blog-app/');
     }
   }, [currentUser]);
   return (

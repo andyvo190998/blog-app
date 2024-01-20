@@ -19,7 +19,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        'http://localhost:8800/api/auth/register',
+        `${import.meta.env.VITE_BE_ENDPOINT}/api/auth/register`,
         inputs
       );
       navigate('/login');
