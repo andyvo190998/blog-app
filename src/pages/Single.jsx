@@ -87,7 +87,7 @@ const Single = () => {
             <div className="content">
               <img
                 style={{ height: post.img === null && '0px' }}
-                src={`./dist/uploads/${post.img}`}
+                src={`./uploads/${post.img}`}
                 alt="img"
               />
               <div className="user">
