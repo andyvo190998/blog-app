@@ -16,7 +16,6 @@ const Menu = () => {
         const { data } = await axios.get(
           `${import.meta.env.VITE_BE_ENDPOINT}/api/posts${cat}`
         );
-        console.log(data);
         setPosts(data);
         setOnLoading(false);
       } catch (error) {

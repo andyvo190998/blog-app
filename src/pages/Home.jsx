@@ -1,9 +1,11 @@
 import { Alert, Stack } from '@mui/material';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/authContext';
 
 const Home = () => {
+  const { setBackendConnection, backendConnection } = useContext(AuthContext);
   const navigate = useNavigate();
   const cat = useLocation().search;
   const [posts, setPosts] = useState([]);
@@ -21,7 +23,6 @@ const Home = () => {
 
   useEffect(() => {
     setOnLoading(null);
-    console.log(`${import.meta.env.VITE_BE_ENDPOINT}/api/posts${cat}`);
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
@@ -30,6 +31,8 @@ const Home = () => {
         setPosts(data);
         setOnLoading(false);
       } catch (error) {
+        setBackendConnection(false);
+        setOnLoading(false);
         console.error(error);
       }
     };
@@ -39,6 +42,10 @@ const Home = () => {
     <div className="home">
       {onLoading === null ? (
         <p style={{ textAlign: 'center' }}>Loading...</p>
+      ) : onLoading === false && backendConnection === false ? (
+        <Stack sx={{ flex: 5, mt: 5 }}>
+          <Alert severity="error">Backend connection fail!</Alert>
+        </Stack>
       ) : (
         <div className="posts">
           {posts.length > 0 ? (

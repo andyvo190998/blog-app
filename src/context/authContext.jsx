@@ -11,6 +11,7 @@ export const AuthContextProvider = ({ children }) => {
     JSON.parse(localStorage.getItem('user')) || null
   );
   const [selectedCat, setSelectedCat] = useState(null);
+  const [backendConnection, setBackendConnection] = useState(null);
 
   const login = async (inputs) => {
     const res = await axios.post(
@@ -38,20 +39,28 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const token = Cookies.get('access_token');
     if (token === undefined) {
-      enqueueSnackbar('Session expired, please login again!', {
-        variant: 'error',
-        anchorOrigin: {
-          vertical: 'bottom',
-          horizontal: 'right',
-        },
-      });
+      // enqueueSnackbar('Session expired, please login again!', {
+      //   variant: 'error',
+      //   anchorOrigin: {
+      //     vertical: 'bottom',
+      //     horizontal: 'right',
+      //   },
+      // });
       logout();
     }
   }, []);
 
   return (
     <AuthContext.Provider
-      value={{ currentUser, login, logout, setSelectedCat, selectedCat }}
+      value={{
+        currentUser,
+        login,
+        logout,
+        setSelectedCat,
+        selectedCat,
+        setBackendConnection,
+        backendConnection,
+      }}
     >
       {children}
     </AuthContext.Provider>

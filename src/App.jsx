@@ -55,7 +55,6 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  // console.log(import.meta.env.VITE_BE_ENDPOINT);
   return (
     <div className="app">
       <div className="container">
