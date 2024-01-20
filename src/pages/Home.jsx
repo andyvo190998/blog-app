@@ -56,7 +56,7 @@ const Home = () => {
                   className={post.img === null ? 'unknownImg' : 'img'}
                 >
                   <img
-                    src={`../../dist/uploads/${post.img}`}
+                    src={`./dist/uploads/${post.img}`}
                     alt="Post image error"
                   />
                 </div>
