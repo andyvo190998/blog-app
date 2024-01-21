@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
-import img from '../../public/uploads/1705246856361pexels-ella-olsson-1640772.jpg';
+import img from '/uploads/1705246856361pexels-ella-olsson-1640772.jpg?url';
 
 const Menu = () => {
   console.log(img);
@@ -49,7 +49,7 @@ const Menu = () => {
                   className="post"
                   key={post.id}
                 >
-                  <img src={img} alt="img" />
+                  <img src={`/blog-app/assets/${post.img}`} alt="img" />
                   <h2>{post.title}</h2>
                   <button onClick={() => handleNavigate(post.id)}>
                     Read More
