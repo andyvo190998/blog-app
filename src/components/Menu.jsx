@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
-import img from '../../dist/uploads/1705246856361pexels-ella-olsson-1640772.jpg';
+import img from '../../public/uploads/1705246856361pexels-ella-olsson-1640772.jpg';
 
 const Menu = () => {
   console.log(img);
