@@ -50,7 +50,7 @@ const Menu = () => {
                   key={post.id}
                 >
                   /uploads/${post.img}
-                  <img src={`/uploads/${post.img}?url`} alt="img" />
+                  <img src={`/blog-app/uploads/${post.img}?url`} alt="img" />
                   <h2>{post.title}</h2>
                   <button onClick={() => handleNavigate(post.id)}>
                     Read More
