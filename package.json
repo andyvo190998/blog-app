@@ -23,7 +23,8 @@
     "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.21.1",
-    "sass": "^1.69.6"
+    "sass": "^1.69.6",
+    "serve": "^14.2.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

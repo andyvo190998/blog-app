@@ -18,7 +18,7 @@ const Write = () => {
   const handleSubmitNewPost = async (postContent) => {
     try {
       const { data } = await axios.post(
-        'http://localhost:8800/api/posts',
+        `${import.meta.env.VITE_BE_ENDPOINT}/api/posts`,
         postContent
       );
       navigate(`/post/${data.insertId}`);
@@ -43,7 +43,9 @@ const Write = () => {
   const handleUpdatePost = async (updateContent) => {
     await axios
       .put(
-        `http://localhost:8800/api/posts/${location.search.slice(6)}`,
+        `${import.meta.env.VITE_BE_ENDPOINT}/api/posts/${location.search.slice(
+          6
+        )}`,
         updateContent,
         {
           withCredentials: true,
@@ -53,6 +55,7 @@ const Write = () => {
         navigate(`/post/${location.search.slice(6)}`);
       })
       .catch((error) => {
+        console.error(error);
         enqueueSnackbar(`Update fail, ${error.response.data}`, {
           variant: 'error',
           anchorOrigin: {
@@ -106,7 +109,7 @@ const Write = () => {
       const formData = new FormData();
       formData.append('file', file);
       const res = await axios.post(
-        'http://localhost:8800/api/upload',
+        `${import.meta.env.VITE_BE_ENDPOINT}/api/upload`,
         formData
       );
       return res.data;
@@ -118,7 +121,11 @@ const Write = () => {
   useEffect(() => {
     const getUpdatePost = async () => {
       await axios
-        .get(`http://localhost:8800/api/posts/${location.search.slice(6)}`)
+        .get(
+          `${
+            import.meta.env.VITE_BE_ENDPOINT
+          }/api/posts/${location.search.slice(6)}`
+        )
         .then((res) => {
           setValue(res.data.description);
           setTitle(res.data.title);
