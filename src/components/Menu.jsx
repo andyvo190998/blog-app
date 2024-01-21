@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
+import img from '../../dist/uploads/1705246856361pexels-ella-olsson-1640772.jpg';
 
 const Menu = () => {
+  console.log(img);
   const navigate = useNavigate();
   const maximumRelevantPostDisplay = 3;
   const cat = useLocation().search;
@@ -47,7 +49,7 @@ const Menu = () => {
                   className="post"
                   key={post.id}
                 >
-                  <img src={`../uploads/${post.img}`} alt="img" />
+                  <img src={img} alt="img" />
                   <h2>{post.title}</h2>
                   <button onClick={() => handleNavigate(post.id)}>
                     Read More
