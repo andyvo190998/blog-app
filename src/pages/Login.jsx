@@ -55,7 +55,8 @@ const Login = () => {
         </button>
         <p>{errorState}</p>
         <span>
-          Don't you have an account? <Link to="/register">Register</Link>
+          Don't you have an account?{' '}
+          <Link to="/blog-app/register">Register</Link>
         </span>
       </form>
     </div>

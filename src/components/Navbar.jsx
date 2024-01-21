@@ -13,7 +13,7 @@ const Navbar = () => {
     if (currentUser) {
       await logout();
     } else {
-      navigate('/login');
+      navigate('/blog-app/login');
     }
   };
 
@@ -119,7 +119,7 @@ const Navbar = () => {
               <Link
                 onClick={() => setSelectedCat(null)}
                 className="link"
-                to="/write"
+                to="/blog-app/write"
               >
                 Write
               </Link>

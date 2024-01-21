@@ -22,7 +22,7 @@ const Register = () => {
         `${import.meta.env.VITE_BE_ENDPOINT}/api/auth/register`,
         inputs
       );
-      navigate('/login');
+      navigate('/blog-app/login');
     } catch (err) {
       setErrorState(err.response.data);
     }
@@ -59,7 +59,7 @@ const Register = () => {
         </button>
         <p>{errorState}</p>
         <span>
-          Don you have an account? <Link to="/login">Login</Link>
+          Don you have an account? <Link to="/blog-app/login">Login</Link>
         </span>
       </form>
     </div>

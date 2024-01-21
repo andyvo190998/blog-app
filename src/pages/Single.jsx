@@ -18,8 +18,7 @@ const Single = () => {
   const [errorState, setErrorState] = useState(null);
   const [deleted, setDeleted] = useState(null);
 
-  const postId = location.pathname.split('/')[2];
-
+  const postId = location.pathname.split('/')[3];
   const handleDeletePost = async () => {
     try {
       const { data } = await axios.delete(
@@ -101,7 +100,7 @@ const Single = () => {
                 </div>
                 {currentUser !== null && currentUser.id === post.user_id && (
                   <div className="edit">
-                    <Link to={`/write?edit=${postId}`}>
+                    <Link to={`/blog-app/write?edit=${postId}`}>
                       <img src={Edit} alt="edit" />
                     </Link>
                     <img onClick={handleDeletePost} src={Delete} alt="delete" />

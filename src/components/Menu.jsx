@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
-import img from '/uploads/1705246856361pexels-ella-olsson-1640772.jpg?url';
 
 const Menu = () => {
-  console.log(img);
   const navigate = useNavigate();
   const maximumRelevantPostDisplay = 3;
   const cat = useLocation().search;
@@ -28,7 +26,8 @@ const Menu = () => {
   }, [cat]);
 
   const handleNavigate = (id) => {
-    navigate(`/post/${id}`);
+    console.log('here');
+    navigate(`/blog-app/post/${id}`);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',

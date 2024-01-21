@@ -19,7 +19,6 @@ export const AuthContextProvider = ({ children }) => {
       inputs,
       { withCredentials: true }
     );
-    console.log(res);
     setCurrentUser(res.data);
   };
 
@@ -38,6 +37,7 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     const token = Cookies.get('access_token');
+    console.log(token);
     if (token === undefined) {
       // enqueueSnackbar('Session expired, please login again!', {
       //   variant: 'error',

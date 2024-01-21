@@ -12,7 +12,7 @@ const Home = () => {
   const [onLoading, setOnLoading] = useState(null);
 
   const goToPost = (post) => {
-    navigate(`/post/${post.id}`);
+    navigate(`/blog-app/post/${post.id}`);
   };
 
   const handleShortenText = (text) => {

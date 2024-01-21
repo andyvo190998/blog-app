@@ -28,29 +28,29 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: '/post/:id',
+        path: '/blog-app/post/:id',
         element: <Single />,
       },
       {
-        path: '/write',
+        path: '/blog-app/write',
         element: <Write />,
       },
     ],
   },
   {
-    path: '/register',
+    path: '/blog-app/register',
     element: <Register />,
   },
   {
-    path: '/login',
+    path: '/blog-app/login',
     element: <Login />,
   },
   {
-    path: '/home',
+    path: '/blog-app/home',
     element: <Home />,
   },
   {
-    path: '/write',
+    path: '/blog-app/write',
     element: <Write />,
   },
 ]);
