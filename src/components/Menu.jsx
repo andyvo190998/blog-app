@@ -49,7 +49,8 @@ const Menu = () => {
                   className="post"
                   key={post.id}
                 >
-                  <img src={`/blog-app/uploads/${post.img}`} alt="img" />
+                  /uploads/${post.img}
+                  <img src={img} alt="img" />
                   <h2>{post.title}</h2>
                   <button onClick={() => handleNavigate(post.id)}>
                     Read More
