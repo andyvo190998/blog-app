@@ -55,7 +55,10 @@ const Home = () => {
                   onClick={() => goToPost(post)}
                   className={post.img === null ? 'unknownImg' : 'img'}
                 >
-                  <img src={`../uploads/${post.img}`} alt="Post image error" />
+                  <img
+                    src={`/blog-app/uploads/${post.img}?url`}
+                    alt="Post image error"
+                  />
                 </div>
                 <div className="content">
                   <Link className="link" to={`/blog-app/post/${post.id}`}>
