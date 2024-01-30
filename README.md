@@ -4,9 +4,9 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=andyvo190998&label=Profile%20views&color=0e75b6&style=flat" alt="andyvo190998" /> </p>
 
+- In this app I am using ReactJS, NodeJS and Mysql to develop a social blog app that allows user to create an account and then write posts.
+- Link deployment 👉 <a href='https://andyvo190998.github.io/blog-app/' target='blank'>HERE</a>
 - 👨‍💻 Visit my web portfolio to know everything about me [https://andyvo190998.github.io/animated-portfolio/](https://andyvo190998.github.io/animated-portfolio/)
-
-- 💬 Ask me about **Web Development, MERN app,...**
 
 - 📫 How to reach me **andy.vo.98vn@gmail.com**
 
